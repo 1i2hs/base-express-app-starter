@@ -26,5 +26,5 @@ A base project structure for express based application. This project is influenc
 - [jest](https://github.com/facebook/jest): Jest is a delightful JavaScript Testing Framework with a focus on simplicity.
 
 ## TBD
-- [] Deploy as package on NPM registry.
-- [] Prepare base unit test code for base source code files.
+- [ ] Deploy as package on NPM registry.
+- [ ] Prepare base unit test code for base source code files.
