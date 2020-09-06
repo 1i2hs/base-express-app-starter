@@ -4,9 +4,11 @@
   "description": "a base project structure for an express application.",
   "main": "app.js",
   "scripts": {
+    "start": "node src/app.js",
+    "start-dev": "pm2 start ecosystem.config.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint . --fix",
-    "format": "prettier --write ."
+    "lint": "eslint src --fix",
+    "format": "prettier --write src"
   },
   "keywords": [
     "express",
@@ -35,6 +37,9 @@
     "node": ">=12.17.0"
   },
   "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 2019
+    },
     "plugins": [
       "prettier"
     ],

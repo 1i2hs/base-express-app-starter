@@ -1,9 +1,8 @@
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
-const routes = require("./api");
-// import routes from '../api';
-// import config from '../config';
+const routes = require('../api');
+const config = require('../config');
 
 /**
  * configures all required middlewares for express application
@@ -60,7 +59,7 @@ module.exports = (app) => {
     return next(err);
   });
 
-  app.use((err, req, res, next) => {
+  app.use((err, req, res) => {
     res.status(err.status || 500);
     res.json({
       errors: {
