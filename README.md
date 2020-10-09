@@ -31,6 +31,11 @@ A base project structure for express based application. This project is influenc
 - [prettier](https://github.com/prettier/prettier): Prettier is an opinionated code formatter. It enforces a consistent style by parsing your code and re-printing it with its own rules that take the maximum line length into account, wrapping code when necessary.
 - [jest](https://github.com/facebook/jest): Jest is a delightful JavaScript Testing Framework with a focus on simplicity.
 
+## Updates
+
+### 2020-10-09
+Changed Logger module to have a name for each module which uses it. Previously, there was just a single universal logger module which prints out all the log, but to print out precise log into the console & a log file it is better to have different logger module for each module/class.
+
 ## TBD
 
 - [ ] Deploy as package on NPM registry.
