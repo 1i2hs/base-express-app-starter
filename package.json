@@ -1,6 +1,6 @@
 {
   "name": "base-express-app",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "a base project structure for an express application.",
   "main": "app.js",
   "scripts": {
