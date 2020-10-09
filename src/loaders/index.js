@@ -1,6 +1,6 @@
 const expressLoader = require('./express');
-const Logger = require('./logger');
-
+const { getLogger } = require('./logger');
+const Logger = getLogger('loaders');
 /**
  * configures all required middlewares for express application
  * @param {import('express').Application} app
