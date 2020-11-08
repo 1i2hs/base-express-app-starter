@@ -33,8 +33,12 @@ A base project structure for express based application. This project is influenc
 
 ## Updates
 
-### 2020-10-09
-Changed Logger module to have a name for each module which uses it. Previously, there was just a single universal logger module which prints out all the log, but to print out precise log into the console & a log file it is better to have different logger module for each module/class.
+### version 0.1.1(2020-10-09)
+- Changed Logger module to have a name for each module which uses it. Previously, there was just a single universal logger module which prints out all the log, but to print out precise log into the console & a log file it is better to have different logger module for each module/class.
+
+### version 0.1.2(2020-11-08)
+- Changed [winston](https://github.com/winstonjs/winston) based Logger module to show a stack trace properly on error.
+- Fixed minor code error related to parseInt function.
 
 ## TBD
 
