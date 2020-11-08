@@ -14,7 +14,7 @@ module.exports = {
   /**
    * Your favorite port
    */
-  port: parseInt(process.env.PORT, 3000),
+  port: parseInt(process.env.PORT, 10) || 3000,
 
   /**
    * Your secret sauce
