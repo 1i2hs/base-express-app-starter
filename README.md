@@ -44,3 +44,4 @@ A base project structure for express based application. This project is influenc
 
 - [ ] Deploy as package on NPM registry.
 - [ ] Prepare base unit test code for base source code files.
+- [ ] Replace moment-timezone module with one of the alternatives.
