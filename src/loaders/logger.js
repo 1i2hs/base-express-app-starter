@@ -52,12 +52,10 @@ function getLogger(name) {
     });
   }
 
-  const logger = createLogger({
+  return createLogger({
     format: errors({ stack: true }),
     transports: [consoleTransport],
   });
-
-  return logger;
 }
 
 module.exports = {
