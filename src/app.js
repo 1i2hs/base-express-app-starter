@@ -1,27 +1,16 @@
-const express = require('express');
+const express = require("express");
 
-const { getLogger } = require('./loaders/logger');
-const config = require('./config');
+const loader = require("./loader");
+const { logger } = loader;
 
-const logger = getLogger('app');
+logger.info(`Initiating the application setup`);
+const app = express();
 
-async function startServer() {
-  const app = express();
-  /**
-   * A little hack here
-   * Import/Export can only be used in 'top-level code'
-   * Well, at least in node 10 without babel and at the time of writing
-   * So we are using good old require.
-   **/
-  await require('./loaders')(app);
+loader.loadExpress(app);
+logger.info(`Completed Express setup`);
 
-  app.listen(config.port, (err) => {
-    if (err) {
-      logger.error(err);
-      process.exit(1);
-    }
-    logger.info(`Server listening on port: ${config.port}`);
-  });
-}
+/* some other setup process can be placed here */
 
-startServer();
+logger.info(`Completed the application setup`);
+
+module.exports = app;

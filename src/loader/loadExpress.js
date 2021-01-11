@@ -1,29 +1,30 @@
-const bodyParser = require('body-parser');
-const cors = require('cors');
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const morgan = require("morgan");
 
-const routes = require('../api');
-const config = require('../config');
+const api = require("../api");
+const config = require("../config");
 
 /**
  * configures all required middlewares for express application
  * @param {import('express').Application} app
  */
-module.exports = (app) => {
+function loadExpress(app) {
   /**
    * Health Check endpoints
    * @TODO Explain why they are here
    */
-  app.get('/status', (req, res) => {
+  app.get("/status", (req, res) => {
     res.status(200).end();
   });
 
-  app.head('/status', (req, res) => {
+  app.head("/status", (req, res) => {
     res.status(200).end();
   });
 
   // Useful if you're behind a reverse proxy (Heroku, Bluemix, AWS ELB, Nginx, etc)
   // It shows the real origin IP in the heroku or Cloudwatch logs
-  app.enable('trust proxy');
+  app.enable("trust proxy");
 
   // The magic package that prevents frontend developers going nuts
   // Alternate description:
@@ -33,18 +34,23 @@ module.exports = (app) => {
   // Some sauce that always add since 2014
   // "Lets you use HTTP verbs such as PUT or DELETE in places where the client doesn't support it."
   // Maybe not needed anymore ?
-  app.use(require('method-override')());
+  app.use(require("method-override")());
 
   // Middleware that transforms the raw string of req.body into json
   app.use(bodyParser.json());
 
+  // HTTP request logger middleware
+  app.use(
+    process.env.NODE_ENV === "production" ? morgan("common") : morgan("dev")
+  );
+
   // Load API routes
-  app.use(config.api.prefix, routes());
+  app.use(config.api.prefix, api.createAPIRouter());
 
   /// catch 404 and forward to error handler
   app.use((req, res, next) => {
-    const err = new Error('Not Found');
-    err['status'] = 404;
+    const err = new Error("Not Found");
+    err["status"] = 404;
     next(err);
   });
 
@@ -53,7 +59,7 @@ module.exports = (app) => {
     /**
      * Handle 401 thrown by express-jwt library
      */
-    if (err.name === 'UnauthorizedError') {
+    if (err.name === "UnauthorizedError") {
       return res.status(err.status).send({ message: err.message }).end();
     }
     return next(err);
@@ -67,6 +73,6 @@ module.exports = (app) => {
       },
     });
   });
+}
 
-  return app;
-};
+module.exports = loadExpress;

@@ -1,21 +1,17 @@
 {
-  "name": "base-express-app",
-  "version": "0.1.2",
-  "description": "a base project structure for an express application.",
+  "name": "express-app-javascript",
+  "version": "0.1.0",
+  "description": "a reference project for an express application.",
   "main": "app.js",
   "scripts": {
-    "start": "node src/app.js",
-    "start-dev": "pm2 start ecosystem.config.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./bin/www",
+    "test": "jest",
     "lint": "eslint src --fix",
     "format": "prettier --write src"
   },
   "keywords": [
-    "express",
-    "readabilityjs"
+    "express"
   ],
-  "author": "Inho Han",
-  "license": "MIT",
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
@@ -31,7 +27,10 @@
     "eslint": "^7.8.1",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.3.6",
     "jest": "^26.4.2",
+    "lint-staged": "^10.5.3",
+    "nodemon": "^2.0.7",
     "prettier": "^2.1.1"
   },
   "engines": {
@@ -53,11 +52,14 @@
       "jest": true
     }
   },
-  "prettier": {
-    "semi": true,
-    "trailingComma": "all",
-    "singleQuote": true,
-    "printWidth": 120,
-    "tabWidth": 2
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write"
+    ]
   }
 }
