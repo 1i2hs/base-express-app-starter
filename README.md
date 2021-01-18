@@ -29,7 +29,7 @@ A reference project structure for express based application.
 
 ## Start development
 ```
-npm start-dev
+npm start
 ```
 
 You can check sample API by making a HTTP GET request with the following URL:
