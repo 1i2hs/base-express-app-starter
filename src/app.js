@@ -1,7 +1,7 @@
 const express = require("express");
 
 const loader = require("./loader");
-const { logger } = loader;
+const logger = require("./utils/logger");
 
 logger.info(`Initiating the application setup`);
 const app = express();
