@@ -1,3 +1,11 @@
+## [1.0.1](https://github.com/1i2hs/base-express-app/compare/v1.0.0...v1.0.1) (2021-01-21)
+
+
+### Bug Fixes
+
+* **:heavy_minus_sign::** removed tests directory from the project structure ([d1c77c0](https://github.com/1i2hs/base-express-app/commit/d1c77c0b4bfa63b6364c63cc2349300ca933558a))
+* **:wrench::** changed the env variable name of GITHUB_TOKEN into SEMANTIC_RELEASE_GITHUB_TOKEN ([d0e5e33](https://github.com/1i2hs/base-express-app/commit/d0e5e332a2081b2867ae54e2ca773a68a8fc44fc))
+
 # 1.0.0 (2021-01-21)
 
 
