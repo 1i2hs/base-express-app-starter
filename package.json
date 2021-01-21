@@ -65,7 +65,7 @@
     ]
   },
   "release": {
-    "branches": "master",
+    "branches": "main",
     "repositoryUrl": "https://github.com/1i2hs/base-express-app.git",
     "debug": "true",
     "plugins": [
