@@ -1,4 +1,5 @@
 # base-express-app
+![Release](https://github.com/1i2hs/base-express-app/workflows/Release/badge.svg?branch=main)
 
 A reference project structure for express based application.
 
