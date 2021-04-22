@@ -1,3 +1,16 @@
+# [1.1.0](https://github.com/1i2hs/base-express-app/compare/v1.0.1...v1.1.0) (2021-04-22)
+
+
+### Bug Fixes
+
+* **:arrow_up::** updated a version of the devDep of husky from v4 -> v6 ([fcff27f](https://github.com/1i2hs/base-express-app/commit/fcff27f27344db6fb90b97b1c08e163877e9de63))
+* **:arrow_up::** updated a version of the devDep of semantic-release to resolve security vulnerabilities ([7f2b5db](https://github.com/1i2hs/base-express-app/commit/7f2b5dbf319dd6e1edcce5b6acf4b7479db623a4))
+
+
+### Features
+
+* **:pencil::** support containerization ([762c29d](https://github.com/1i2hs/base-express-app/commit/762c29d69804db7c7599d7b58c6fbd527e3a9970))
+
 ## [1.0.1](https://github.com/1i2hs/base-express-app/compare/v1.0.0...v1.0.1) (2021-01-21)
 
 
