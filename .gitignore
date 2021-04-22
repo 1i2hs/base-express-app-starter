@@ -165,4 +165,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# huskyjs
+_
+
 # End of https://www.toptal.com/developers/gitignore/api/node,macos,windows
