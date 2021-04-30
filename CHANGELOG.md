@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/1i2hs/base-express-app/compare/v1.1.0...v1.2.0) (2021-04-30)
+
+
+### Features
+
+* **:pencil::** added ARCHITECTURE.md, modules directory, and updated README.md ([af18aee](https://github.com/1i2hs/base-express-app/commit/af18aee7504f470ce0e8d754411ca497c97b4efd))
+
 # [1.1.0](https://github.com/1i2hs/base-express-app/compare/v1.0.1...v1.1.0) (2021-04-22)
 
 
