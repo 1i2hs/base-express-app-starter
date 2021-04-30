@@ -10,7 +10,7 @@ A reference project structure for express based application.
   - [Unit test](#unit-test)
   - [Integration test](#integration-test)
   - [Load test](#load-test)
-- [How to release](#how-to-release)
+- [How to deploy](#how-to-deploy)
 - [Linting and Code Formatting](#linting-and-code-formatting)
   - [ESLint](#eslint)
   - [Prettier](#prettier)
@@ -26,6 +26,7 @@ A reference project structure for express based application.
 
 1. Clone this github project OR download it with zip file.
 2. Modify package.json into your style.
+3. Remove CHANGELOG.md file.
 3. Enjoy coding.
 
 ## Start development
@@ -48,7 +49,31 @@ TBD
 
 ### Load test
 
-## How to release
+## How to deploy
+### CI/CD pipeline
+TBD
+
+### Manual deploy
+**NOTE: if you are trying to push a container image to the private repository, please login to repository using docker login first.**
+#### docker build
+- FOR PRIVATE REPOSITORY:
+```
+docker build -t <my-private-registry-url>:<version> .
+```
+- FOR DOCKER HUB:
+```
+docker build -t <name-of-the-service>:<version> .
+```
+#### docker push
+- FOR PRIVATE REPOSITORY:
+```
+docker push <my-private-registry-url>:<version>
+```
+- FOR DOCKER HUB:
+```
+docker push <name-of-the-service>:<version>
+```
+
 ### semantic-release
 TBD
 
