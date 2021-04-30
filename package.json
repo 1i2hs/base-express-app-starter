@@ -2,7 +2,8 @@
   "name": "base-express-app",
   "version": "0.1.0",
   "description": "a reference project for an express application.",
-  "main": "app.js",
+  "main": "./bin/www",
+  "private": true,
   "scripts": {
     "start": "node ./bin/www",
     "test": "jest",
