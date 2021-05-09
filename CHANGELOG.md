@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/1i2hs/base-express-app/compare/v1.2.0...v1.2.1) (2021-05-09)
+
+
+### Bug Fixes
+
+* **:wrench::** fixed the global express error handler's parameter and updated dependencies ([fac0b2a](https://github.com/1i2hs/base-express-app/commit/fac0b2a918ea359846fad54852e5221468cea8b8))
+
 # [1.2.0](https://github.com/1i2hs/base-express-app/compare/v1.1.0...v1.2.0) (2021-04-30)
 
 
