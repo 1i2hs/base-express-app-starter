@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/1i2hs/base-express-app/compare/v1.2.1...v1.3.0) (2021-06-22)
+
+
+### Features
+
+* **:pencil::** Modified dependency loading process. All dependencies are loaded in the src/loader/index.js file. ([c542304](https://github.com/1i2hs/base-express-app/commit/c542304dcf29406db407d9804a616f4995fe25ef))
+
 ## [1.2.1](https://github.com/1i2hs/base-express-app/compare/v1.2.0...v1.2.1) (2021-05-09)
 
 
