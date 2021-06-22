@@ -1,15 +1,12 @@
-const bodyParser = require("body-parser");
+const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
 
-const api = require("../api");
 const config = require("../config");
+const errorHandler = require("../utils/errorHandler");
+const { AppError, commonErrors } = require("../error");
 
-/**
- * configures all required middlewares for express application
- * @param {import('express').Application} app
- */
-function loadExpress(app) {
+function initializeExpress(app, api) {
   /**
    * Health Check endpoints
    * @TODO Explain why they are here
@@ -37,7 +34,7 @@ function loadExpress(app) {
   app.use(require("method-override")());
 
   // Middleware that transforms the raw string of req.body into json
-  app.use(bodyParser.json());
+  app.use(express.json());
 
   // HTTP request logger middleware
   app.use(
@@ -45,34 +42,37 @@ function loadExpress(app) {
   );
 
   // Load API routes
-  app.use(config.api.prefix, api.createAPIRouter());
+  app.use(config.api.prefix, api);
 
   /// catch 404 and forward to error handler
   app.use((req, res, next) => {
-    const err = new Error("Not Found");
-    err["status"] = 404;
-    next(err);
+    const error = new AppError(
+      commonErrors.resourceNotFoundError,
+      "Not Found",
+      true,
+      400
+    );
+    error["status"] = 404;
+    next(error);
   });
 
   /// error handlers
-  app.use((err, req, res, next) => {
+  app.use((error, req, res, next) => {
     /**
      * Handle 401 thrown by express-jwt library
      */
-    if (err.name === "UnauthorizedError") {
-      return res.status(err.status).send({ message: err.message }).end();
+    if (error.name === "UnauthorizedError") {
+      errorHandler.handleError(error, res);
+      return;
     }
-    return next(err);
+    return next(error);
   });
 
-  app.use((err, req, res) => {
-    res.status(err.status || 500);
-    res.json({
-      errors: {
-        message: err.message,
-      },
-    });
+  app.use((error, req, res, next) => {
+    errorHandler.handleError(error, res);
   });
+
+  return app;
 }
 
-module.exports = loadExpress;
+module.exports = initializeExpress;

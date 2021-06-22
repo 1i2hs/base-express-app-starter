@@ -2,10 +2,11 @@
  * Module dependencies.
  */
 
-const app = require("../src/app");
-const config = require("../src/config");
 const http = require("http");
+const app = require("../src/app");
 const logger = require("../src/utils/logger");
+const config = require("../src/config");
+const errorHandler = require("../src/utils/errorHandler");
 
 /**
  * Get port from environment and store in Express.
@@ -81,5 +82,32 @@ function onListening() {
   const bind = typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
   const env = process.env.NODE_ENV;
   logger.info(`The server initiated with ${env} configuration`);
-  logger.info(`⚡️The server listening on port: ${bind}`);
+  logger.info(`⚡️The server listening on ${bind}`);
 }
+
+/**
+ * Handling uncaughtException
+ */
+process.on("uncaughtException", (error) => {
+  logger.error(`🔴 uncaughtException triggered`);
+  logger.error(error);
+  if (!errorHandler.isTrustedError(error)) {
+    process.exit(1);
+  }
+});
+
+/**
+ * Graceful shutdonw
+ */
+process.on("SIGTERM", () => {
+  logger.info("SIGTERM signal received.");
+  logger.info("🟡 Closing http server.");
+  server.close(async () => {
+    logger.info("🟢 Http server closed.");
+    logger.info(`Shutting down dependent resources`);
+    await app.shutdown();
+    logger.info(`🟢 All dependent resources released`);
+    logger.info(`🟢 Finally terminating the current node process.`);
+    process.exit(0);
+  });
+});
