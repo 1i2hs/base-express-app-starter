@@ -3,14 +3,20 @@ const express = require("express");
 const loader = require("./loader");
 const logger = require("./utils/logger");
 
-logger.info(`Initiating the application setup`);
+logger.info(`[0] Initiating the application setup`);
+
 const app = express();
+loader(app);
 
-loader.loadExpress(app);
-logger.info(`Completed Express setup`);
+logger.info(`🟢 Completed the application setup`);
 
-/* some other setup process can be placed here */
+async function shutdown() {
+  /**
+   * tasks to be done before graceful shutdown must be placed here
+   * e.g. closing DB connections, disconnect subscriptions, etc.
+   **/
+}
 
-logger.info(`Completed the application setup`);
+app.shutdown = shutdown;
 
 module.exports = app;
