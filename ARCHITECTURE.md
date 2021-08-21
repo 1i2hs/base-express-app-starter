@@ -1,7 +1,5 @@
 # Architecture
 
-**!! PLEASE CHANGE/REMOVE THIS FILE AS YOU WANT !!**
-
 This web application server project is based on layered architecutre. These are the layers contained in this project(*a low number means higher layer*):
 
 1. **Presentation Layer(Controllers)**: A layer where API requests are being handled at the front. Controllers of express.js stays in this layer.

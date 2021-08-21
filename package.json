@@ -1,29 +1,29 @@
 {
-  "name": "base-express-app",
-  "version": "0.1.0",
-  "description": "a reference project for an express application.",
-  "main": "./bin/www",
-  "private": true,
+  "name": "base-express-app-starter",
+  "version": "1.4.0",
+  "description": "an Express application starter",
+  "author": "Inho Han <oneitwoh@gmail.com>",
+  "main": "bin/cli.js",
   "scripts": {
-    "start": "node ./bin/www",
-    "dev": "nodemon ./bin/www",
-    "test": "jest",
-    "lint": "eslint src --fix",
-    "format": "prettier --write src",
     "prepare": "husky install"
   },
   "keywords": [
-    "express"
+    "express",
+    "winston",
+    "prettier",
+    "eslint",
+    "docker",
+    "husky"
   ],
+  "bin": {
+    "base-express-app-starter": "bin/cli.js"
+  },
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "cors": "^2.8.5",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "method-override": "^3.0.0",
-    "moment-timezone": "^0.5.31",
-    "morgan": "^1.10.0",
-    "winston": "^3.3.3"
+    "chalk": "^4.1.2",
+    "edit-json-file": "^1.6.0",
+    "gitignore": "^0.7.0",
+    "ncp": "^2.0.0",
+    "ora": "^5.4.1"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^5.0.1",
@@ -32,9 +32,7 @@
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
     "husky": "^6.0.0",
-    "jest": "^26.4.2",
     "lint-staged": "^10.5.3",
-    "nodemon": "^2.0.7",
     "prettier": "^2.1.1",
     "semantic-release": "^17.4.2"
   },
@@ -64,7 +62,7 @@
   },
   "release": {
     "branches": "main",
-    "repositoryUrl": "https://github.com/1i2hs/base-express-app.git",
+    "repositoryUrl": "https://github.com/1i2hs/base-express-app-starter.git",
     "debug": "true",
     "plugins": [
       "@semantic-release/commit-analyzer",
