@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/1i2hs/base-express-app-starter/compare/v1.4.0...v1.5.0) (2021-08-21)
+
+
+### Features
+
+* **semantic-release:** added npm plugin ([0635669](https://github.com/1i2hs/base-express-app-starter/commit/0635669cda0a5bd539dd349781f00f99c7a68be7))
+
 # [1.4.0](https://github.com/1i2hs/base-express-app-starter/compare/v1.3.0...v1.4.0) (2021-08-21)
 
 
