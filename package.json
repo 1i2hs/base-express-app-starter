@@ -1,6 +1,6 @@
 {
   "name": "base-express-app-starter",
-  "version": "1.4.1",
+  "version": "1.4.0",
   "description": "an Express application starter",
   "author": "Inho Han <oneitwoh@gmail.com>",
   "main": "bin/cli.js",
@@ -28,6 +28,7 @@
   "devDependencies": {
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/git": "^9.0.0",
+    "@semantic-release/npm": "^7.1.3",
     "eslint": "^7.8.1",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
@@ -84,7 +85,8 @@
           ],
           "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
         }
-      ]
+      ],
+      "@semantic-release/npm"
     ]
   }
 }
