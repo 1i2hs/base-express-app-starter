@@ -1,6 +1,6 @@
 {
   "name": "base-express-app-starter",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "an Express application starter",
   "author": "Inho Han <oneitwoh@gmail.com>",
   "main": "bin/cli.js",

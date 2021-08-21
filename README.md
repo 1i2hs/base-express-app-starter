@@ -1,39 +1,11 @@
-# base-express-app-starter
+# base-express-app-starter ![Release](https://github.com/1i2hs/base-express-app-starter/workflows/Release/badge.svg?branch=main) [![npm version](https://badge.fury.io/js/base-express-app-starter.svg)](https://badge.fury.io/js/base-express-app-starter)
 
-![Release](https://github.com/1i2hs/base-express-app-starter/workflows/Release/badge.svg?branch=main)
+Another express.js boilerplate for creating REST API server 👍
 
-A reference project structure for express based application.
-
-## Table of contents
-
-- [Installation](#installation)
-- [Start development](#start-development)
-- [How to test](#how-to-test)
-  - [Unit test](#unit-test)
-  - [Integration test](#integration-test)
-  - [Load test](#load-test)
-- [How to deploy](#how-to-deploy)
-- [Linting and Code Formatting](#linting-and-code-formatting)
-  - [ESLint](#eslint)
-  - [Prettier](#prettier)
-  - [lint-staged + husky](#lint-staged-+-husky)
-- [Code productivity tool configuration](#code-productivity-tool-configuration)
-- [Application configuration](#application-configuration)
-- [TBD](#tbd)
-- [Dependencies](#dependencies)
-- [Development dependencies](#development-dependencies)
-
-## Installation
-
-You can easily setup project with:
+## Quick Overview 🚀
 
 ```
 npx base-express-app-starter <project-name>
-```
-
-## Start development
-
-```
 cd <project-name>
 npm start
 ```
@@ -44,59 +16,18 @@ You can check sample API by making a HTTP GET request with the following URL:
 http://localhost:3000/api/sample/
 ```
 
-## How to test
+## Table of contents
 
-### Unit test
-
-TBD
-
-### Integration test
-
-TBD
-
-### Load test
-
-## How to deploy
-
-### CI/CD pipeline
-
-TBD
-
-### Manual deploy
-
-**NOTE: if you are trying to push a container image to the private repository, please login to repository using docker login first.**
-
-#### docker build
-
-- FOR PRIVATE REPOSITORY:
-
-```
-docker build -t <my-private-registry-url>:<version> .
-```
-
-- FOR DOCKER HUB:
-
-```
-docker build -t <name-of-the-service>:<version> .
-```
-
-#### docker push
-
-- FOR PRIVATE REPOSITORY:
-
-```
-docker push <my-private-registry-url>:<version>
-```
-
-- FOR DOCKER HUB:
-
-```
-docker push <name-of-the-service>:<version>
-```
-
-### semantic-release
-
-TBD
+- [Quickstart](#Quickstart)
+- [Linting and Code Formatting](#linting-and-code-formatting)
+  - [ESLint](#eslint)
+  - [Prettier](#prettier)
+  - [lint-staged + husky](#lint-staged-+-husky)
+- [Code productivity tool configuration](#code-productivity-tool-configuration)
+- [Application configuration](#application-configuration)
+- [TBD](#tbd)
+- [Dependencies](#dependencies)
+- [Development dependencies](#development-dependencies)
 
 ## Linting and Code Formatting
 
