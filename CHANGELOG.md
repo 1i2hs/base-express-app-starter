@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/1i2hs/base-express-app-starter/compare/v1.3.0...v1.4.0) (2021-08-21)
+
+
+### Features
+
+* **:pencil::** Created starter cli to easily setup a project using npx ([7c0b49a](https://github.com/1i2hs/base-express-app-starter/commit/7c0b49a7998fafeb35354d5d69305dcdfb018b6d))
+
 # [1.3.0](https://github.com/1i2hs/base-express-app/compare/v1.2.1...v1.3.0) (2021-06-22)
 
 
