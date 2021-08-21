@@ -30,6 +30,7 @@ jobs:
         run: npm ci
       - name: Release
         env:
+          NPM_CONFIG_USERCONFIG: ~/.npmrc
           GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
