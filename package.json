@@ -73,24 +73,29 @@
       [
         "@semantic-release/commit-analyzer",
         {
-          "type": "docs",
-          "release": "patch"
-        },
-        {
-          "type": "test",
-          "release": "patch"
-        },
-        {
-          "type": "ci",
-          "release": "patch"
-        },
-        {
-          "type": "refactor",
-          "release": "patch"
-        },
-        {
-          "scope": "no-release",
-          "release": false
+          "preset": "angular",
+          "releaseRules": [
+            {
+              "type": "docs",
+              "release": "patch"
+            },
+            {
+              "type": "test",
+              "release": "patch"
+            },
+            {
+              "type": "ci",
+              "release": "patch"
+            },
+            {
+              "type": "refactor",
+              "release": "patch"
+            },
+            {
+              "scope": "no-release",
+              "release": false
+            }
+          ]
         }
       ],
       "@semantic-release/release-notes-generator",
