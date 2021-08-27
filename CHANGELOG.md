@@ -1,3 +1,15 @@
+### [1.5.2](https://github.com/1i2hs/base-express-app-starter/compare/v1.5.1...v1.5.2) (2021-08-27)
+
+
+### Bug Fixes
+
+* missing dev dependencies ([1c88cd9](https://github.com/1i2hs/base-express-app-starter/commit/1c88cd9a68b45408609063d64e4f3afeac10d05d))
+
+
+### Continuous Integration
+
+* updated @semantic-release/release-notes-generator to properly generate release notes for each custom release type ([ac08599](https://github.com/1i2hs/base-express-app-starter/commit/ac08599237913b6f93b0c4486bed2e3be1656402))
+
 ## [1.5.1](https://github.com/1i2hs/base-express-app-starter/compare/v1.5.0...v1.5.1) (2021-08-27)
 
 # [1.5.0](https://github.com/1i2hs/base-express-app-starter/compare/v1.4.0...v1.5.0) (2021-08-21)
