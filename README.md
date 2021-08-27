@@ -55,18 +55,7 @@ npm run format
 
 The `lint-staged` is a runner which runs linters against staged `Git` files. It has been commonly used for linting codes right before commit. In other words, it can be final stage for ensuring no errors(technically static code error) go into the repository. It can also enforce code style silently by running code formatter. This allows developers to keep & use their code style locally. You can check the example configuration of the tool in the [package.json](./package.json) file at the `lint-staged` section.
 
-The `husky` is a `Git` commit hook tool which allows developers to easily run any scripts/commands on all `Git` hooks without manually write a `Git` hook script. For example, a code formatter can be executed in pre-commit stage of the `Git` by configuring the code formatter's command in the husky's config like the following(using `Prettier`):
-
-```
-// husky v4 config(v5 has different format for configuration)
-"husky": {
-  "hooks": {
-    "pre-commit": "prettier --write"
-  }
-}
-```
-
-When those two tools are combined together, it becomes very powerful static code analysis pipeline. If the `lint-staged` with two jobs, linting and code formatting, is bound with a pre-commit hook through the `husky`, the jobs will be automatically triggered on every trial of a `Git` commit. Reducing the burden of the developer!😁
+The `husky` is a `Git` commit hook tool which allows developers to easily run any scripts/commands on all `Git` hooks without manually write a `Git` hook script. For example, a code formatter can be executed in pre-commit stage of the `Git` by configuring the code formatter's command in the husky's config. When those two tools are combined together, it becomes very powerful static code analysis pipeline. If the `lint-staged` with two jobs, linting and code formatting, is bound with a pre-commit hook through the `husky`, the jobs will be automatically triggered on every trial of a `Git` commit. Reducing the burden of the developer!😁
 
 ## Code productivity tool configuration
 
