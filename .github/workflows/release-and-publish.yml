@@ -1,14 +1,11 @@
-# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-
-name: Release
+name: Release and Publish Package
 
 on:
   push:
     branches: [main]
 
 jobs:
-  release:
+  release-and-publish:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -28,7 +25,7 @@ jobs:
           registry-url: https://registry.npmjs.org
       - name: Install dependencies
         run: npm ci
-      - name: Release
+      - name: Release and Publish Package
         env:
           NPM_CONFIG_USERCONFIG: ~/.npmrc
           GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_GITHUB_TOKEN }}
