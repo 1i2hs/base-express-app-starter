@@ -1,3 +1,5 @@
+## [1.5.1](https://github.com/1i2hs/base-express-app-starter/compare/v1.5.0...v1.5.1) (2021-08-27)
+
 # [1.5.0](https://github.com/1i2hs/base-express-app-starter/compare/v1.4.0...v1.5.0) (2021-08-21)
 
 
